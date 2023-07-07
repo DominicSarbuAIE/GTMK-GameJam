@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 
-public class KnifeGuy : Enemy
+public class SniperGuy : Enemy
 {
     // Start is called before the first frame update
     void Start()
