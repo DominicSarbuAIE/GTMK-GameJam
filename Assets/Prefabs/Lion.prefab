@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 720779723010132704}
   - component: {fileID: 8722666231863678595}
   - component: {fileID: 50863596547360301}
-  - component: {fileID: 8955424214717126718}
   m_Layer: 0
   m_Name: Lion
   m_TagString: Untagged
@@ -160,16 +159,3 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &8955424214717126718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454111462920241474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf68b5a9ae952f24ba069712a4fd650b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 10
