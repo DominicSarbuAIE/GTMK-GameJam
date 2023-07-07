@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     {
         // identify player object using Player tag
         _player = GameObject.FindWithTag("Player").transform;
+        _health = _maxHealth;
     }
 
     // Update is called once per frame
@@ -28,5 +29,24 @@ public class Enemy : MonoBehaviour
         Vector3 targetpos = new Vector3(_player.position.x, transform.position.y, _player.position.z);
         // Move Towards "targetpos" (Player)
         transform.position = Vector3.MoveTowards(transform.position, _player.position, _speed * Time.deltaTime);
+
+        if (_health <= 0)
+        {
+            StartCoroutine(OnDeath());
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        _health -= damage;
+        Debug.Log(_health);
+    }
+
+    private IEnumerator OnDeath()
+    {
+
+        yield return new WaitForSeconds(0.0000001f);
+
+        Destroy(gameObject);
     }
 }
