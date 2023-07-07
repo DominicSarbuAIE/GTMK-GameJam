@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 68237649}
   - component: {fileID: 68237648}
   - component: {fileID: 68237647}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 638332827}
   - component: {fileID: 638332826}
   - component: {fileID: 638332825}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,6 +707,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _followSpeed: 3
+  _wall:
+    serializedVersion: 2
+    m_Bits: 8
   _target: {fileID: 1755959715}
   _maxDistance: 8.5
 --- !u!1 &1641724298
