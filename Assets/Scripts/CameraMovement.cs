@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
@@ -16,7 +16,10 @@ public class CameraMovement : MonoBehaviour
     {
         _offset = transform.position - _target.position;
     }
-    
+
+    private void Update()
+    {
+    }
     void FixedUpdate()
     {
         Vector3 targetPosition = new Vector3(_target.position.x, 0, 0);
@@ -26,7 +29,7 @@ public class CameraMovement : MonoBehaviour
         {
             // Wall detected within maxDistance
             // Stop camera movement here
-            transform.position = Vector3.Lerp(transform.position, targetPosition + _offset, 0);
+            transform.position = new Vector3(transform.position.x + _offset.x, targetPosition.y + _offset.y, -7.47f);
         }
         else
         {
