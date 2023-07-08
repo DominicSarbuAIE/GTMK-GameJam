@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float _speed;
     [SerializeField] protected float _attackDamage;
     [SerializeField] protected float _attackSpeed;
+    [SerializeField] protected float _attackRange;
     [SerializeField] protected float _maxHealth;
 
     // Other
