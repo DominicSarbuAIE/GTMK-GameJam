@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class SniperGuy : Enemy
 {
+
+    public EnemyMovement _movement;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,8 @@ public class SniperGuy : Enemy
         }
         else if(_distance > _maxRange)
         {
-            MoveToCamp();
+            _movement._enemyInCamp = false;
+            _movement.MoveToCamp();
         }
         else
         {
