@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1959369312529780856}
   - component: {fileID: 6467137280054934336}
   - component: {fileID: 8623588432605129631}
-  - component: {fileID: 7519593660626218857}
   - component: {fileID: 7090369490910471868}
+  - component: {fileID: 6652393160239180253}
   m_Layer: 0
   m_Name: Giraffe
   m_TagString: Player
@@ -116,19 +116,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7519593660626218857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3109410196264159981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c48bfcfe96c1c1344a0b595789d4c6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 10
 --- !u!114 &7090369490910471868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,3 +146,15 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &6652393160239180253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3109410196264159981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696d1649e5138784ca94822510644bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
