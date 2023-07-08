@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlaneGenerator : MonoBehaviour
 {
@@ -34,6 +33,8 @@ public class PlaneGenerator : MonoBehaviour
         GenerateWorld();
     }
 
+    public GameObject campgroundPrefab; // assign the campground prefab in the inspector
+
     private void GenerateWorld()
     {
         playerDeltaMove.x = _player.transform.position.x - playerPrevPos.x;
@@ -51,6 +52,12 @@ public class PlaneGenerator : MonoBehaviour
                     {
                         GameObject tile = Instantiate(plane, pos, Quaternion.identity, gameObject.transform);
                         tilePlane.Add(pos, tile);
+
+                        // check if a campground should be spawned at this position
+                        if (ShouldSpawnCampground())
+                        {
+                            Instantiate(campgroundPrefab, pos, Quaternion.identity);
+                        }
                     }
                 }
             }
@@ -69,6 +76,12 @@ public class PlaneGenerator : MonoBehaviour
                     {
                         GameObject tile = Instantiate(plane, pos, Quaternion.identity, gameObject.transform);
                         tilePlane.Add(pos, tile);
+
+                        // check if a campground should be spawned at this position
+                        if (ShouldSpawnCampground())
+                        {
+                            Instantiate(campgroundPrefab, pos, Quaternion.identity);
+                        }
                     }
                 }
             }
@@ -77,6 +90,13 @@ public class PlaneGenerator : MonoBehaviour
         playerPrevPos.x = _player.transform.position.x;
         playerPrevPos.z = _player.transform.position.z;
     }
+
+    private bool ShouldSpawnCampground()
+    {
+        // use a random number generator to control the frequency of spawning campgrounds
+        return Random.Range(0f, 1f) < 0.05f; // 5% chance to spawn a campground
+    }
+
 
     private bool hasPlayerMoved(float playerX, float playerZ)
     {
