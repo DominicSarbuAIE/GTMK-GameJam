@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField] protected float _attackDamage;
     [SerializeField] protected float _attackSpeed;
     [SerializeField] protected float _attackRange;
+    [SerializeField] private float _knockback;
+    public KnifeMelee _knife;
 
     // Other
     private Rigidbody _rb;
@@ -49,5 +52,21 @@ public class Player : MonoBehaviour
     protected void OnMove(InputValue value)
     {
         _movement = value.Get<Vector2>();
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player" && _knife._isAttacking)
+        {
+            Debug.Log("Hit");
+            DoDamage(_knife._damage);
+        }
+    }
+
+    public void DoDamage(int _damage)
+    {
+        _rb.AddForce(transform.forward * _knockback);
+        _health -= _damage;
     }
 }

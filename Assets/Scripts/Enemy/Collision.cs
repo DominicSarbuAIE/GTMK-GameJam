@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
+    public void Start()
+    {
+        
+    }
+
+    public void Update()
+    {
+        
+    }
 
     public KnifeMelee _knife;
+    public Player _player;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player" && _knife._isAttacking)
+        if(other.gameObject.tag == "Player" && _knife._isAttacking)
         {
-            Debug.Log("hit");
+            Debug.Log("Hit");
+            _player.DoDamage(_knife._damage);
         }
     }
 

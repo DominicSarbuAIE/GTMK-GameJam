@@ -7,11 +7,12 @@ public class KnifeMelee : MonoBehaviour
 {
     [SerializeField] private float _attackRange;
     [SerializeField] private float _attackDelay;
-    [SerializeField] private bool _canAttack = false;
+    [SerializeField] private bool _canAttack = true;
     [SerializeField] private Rigidbody _player;
-    private float _distance;
+    [SerializeField] private float _distance;
     [SerializeField] private KnifeGuy _speed;
     public bool _isAttacking = false;
+    public int _damage;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class KnifeMelee : MonoBehaviour
     {
         _distance = Vector3.Distance(_player.position, transform.position);
 
-        if (_distance < 1)
+        if (_distance < 2)
         {
             if (_canAttack)
             {
@@ -36,15 +37,15 @@ public class KnifeMelee : MonoBehaviour
     public void Attack()
     {
         _isAttacking = true;
-        _canAttack = false;
         _speed._speed = 0;
         StartCoroutine(AttackCooldown());
+        _canAttack = false;
     }
-
+    
     IEnumerator AttackCooldown()
     {
-        _isAttacking = false;
         yield return new WaitForSeconds(_attackDelay);
+        _isAttacking = false;
         _speed._speed = 2;
         _canAttack = true;
     }

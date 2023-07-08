@@ -8,8 +8,6 @@ public class Enemy : MonoBehaviour
     // Stats
     public float _health;
     [SerializeField] public float _speed;
-    [SerializeField] protected float _attackDamage;
-    [SerializeField] protected float _attackSpeed;
     [SerializeField] protected float _maxRange;
     [SerializeField] protected float _minRange;
     [SerializeField] protected float _maxHealth;
