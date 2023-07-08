@@ -15,9 +15,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float _maxHealth;
     [SerializeField] private LayerMask _playerLayMask;
     protected float _distance;
-    public Camp _camp;
-    [SerializeField] private Transform _campsPos;
-    [SerializeField] private Transform _enemyPos;
 
     // Other
     protected Transform _player;
@@ -40,6 +37,7 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(OnDeath());
         }
+
     }
 
     public void TakeDamage(float damage)
@@ -54,24 +52,5 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(0.0000001f);
 
         Destroy(gameObject);
-    }
-
-    public void MoveToCamp()
-    {
-        Vector3 enemyPos = new Vector3(_enemyPos.position.x, transform.position.y, _enemyPos.position.z);
-        Vector3 _campPosition = new Vector3(_campsPos.position.x, transform.position.y, _campsPos.position.z);
-
-        if (enemyPos.x > _campPosition.x + _camp._radius || enemyPos.x < _campPosition.x + _camp._radius)
-        {
-            if (enemyPos.z > _campPosition.z + _camp._radius || enemyPos.z < _campPosition.z + _camp._radius)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, _campsPos.position, _speed * Time.deltaTime);
-            }
-        }
-    }
-
-    public void MoveInCamp()
-    {
-
     }
 }
