@@ -15,5 +15,32 @@ public class KnifeGuy : Enemy
     void Update()
     {
         base.Update();
+
+        _distance = Vector3.Distance(_player.position, transform.position);
+
+        if (_distance < _minRange)
+        {
+            StopEnemy();
+        }
+        else if (_distance > _maxRange)
+        {
+            StopEnemy();
+        }
+        else
+        {
+            // Move Towards "targetpos" (Player)
+            GoToPlayer();
+        }
+    }
+
+    private void StopEnemy()
+    {
+        _speed = 0;
+    }
+
+    private void GoToPlayer()
+    {
+        _speed = 2;
+        transform.position = Vector3.MoveTowards(transform.position, _player.position, _speed * Time.deltaTime);
     }
 }

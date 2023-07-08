@@ -19,15 +19,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //move player
         _rb.position += new Vector3(_movement.x, 0, _movement.y) * _speed * Time.deltaTime;
-        //if(Input.GetKey(KeyCode.E))
-        //{
-        //    transform.Rotate(0, 0.1f, 0);
-        //}
-        //if (Input.GetKey(KeyCode.Q))
-        //{
-        //    transform.Rotate(0, -0.1f, 0);
-        //}
+
+        //make character face the mouse
         Mouse mouse = Mouse.current;
         LayerMask playerMask = LayerMask.GetMask("Player");
         Ray camRay = Camera.main.ScreenPointToRay(mouse.position.ReadValue());

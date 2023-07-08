@@ -10,6 +10,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private KnifeGuy _knifeGuy;
     [SerializeField] private Enemy _enemy;
     [SerializeField] private float _damage;
+    [SerializeField]private Color gizmoIdleColor = Color.green;
+    [SerializeField]private bool showGizmo = true;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +35,17 @@ public class PlayerAttack : MonoBehaviour
         foreach(Collider enemys in _hitEnemys)
         {
             Debug.Log("we hit enemy");
-            enemys.GetComponent<KnifeGuy>().TakeDamage(_damage);
+            enemys.GetComponent<Enemy>().TakeDamage(_damage);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (showGizmo)
+        {
+            Gizmos.color = gizmoIdleColor;
+
+            Gizmos.DrawSphere(_attackPoint.position, _rangeOfAttack);
         }
     }
 }
