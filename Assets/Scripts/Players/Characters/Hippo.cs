@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Hippo : MonoBehaviour
+[RequireComponent(typeof(Rigidbody))]
+public class Hippo : Player
 {
-    Vector3 _position = new Vector3();
-
-    // Start is called before the first frame update
     void Start()
     {
-        
+        base.Start();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        base.Update();
+    }
+
+    void FixedUpdate()
+    {
+        base.FixedUpdate();
     }
 }

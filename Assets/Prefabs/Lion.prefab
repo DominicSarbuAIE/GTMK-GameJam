@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6780020340103289731}
   - component: {fileID: 4622609438425246551}
   - component: {fileID: 720779723010132704}
-  - component: {fileID: 8722666231863678595}
   - component: {fileID: 50863596547360301}
   - component: {fileID: 3652200164186159651}
+  - component: {fileID: -7171277844977451303}
   m_Layer: 0
   m_Name: Lion
   m_TagString: Untagged
@@ -118,19 +118,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8722666231863678595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454111462920241474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c48bfcfe96c1c1344a0b595789d4c6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 10
 --- !u!114 &50863596547360301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +168,23 @@ MonoBehaviour:
   _damage: 0
   gizmoIdleColor: {r: 0, g: 1, b: 0, a: 1}
   showGizmo: 1
+--- !u!114 &-7171277844977451303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454111462920241474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b249a83c343f0f438ecf2ec8f9f454c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 0
+  _speed: 0
+  _attackDamage: 0
+  _attackSpeed: 0
+  _attackRange: 0
 --- !u!1 &8964815507514751789
 GameObject:
   m_ObjectHideFlags: 0
