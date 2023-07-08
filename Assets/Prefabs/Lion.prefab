@@ -174,12 +174,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackPoint: {fileID: 5408648777587848897}
-  _rangeOfAttack: 5
-  _enemyLayers:
+  _rangeOfAttack: 0.5
+  Enemy:
     serializedVersion: 2
-    m_Bits: 128
-  _knifeGuy: {fileID: 0}
-  _enemy: {fileID: 0}
+    m_Bits: 0
   _damage: 0
   gizmoIdleColor: {r: 0, g: 1, b: 0, a: 1}
   showGizmo: 1
@@ -207,7 +205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8964815507514751789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.97}
+  m_LocalPosition: {x: 0.019, y: 0, z: 0.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

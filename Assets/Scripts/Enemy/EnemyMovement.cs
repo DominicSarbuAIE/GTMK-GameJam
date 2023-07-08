@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class EnemyMovement : Enemy
+[RequireComponent(typeof(Enemy))]
+[RequireComponent(typeof(Camp))]
+public class EnemyMovement : MonoBehaviour
 {
     public Camp _camp;
     [SerializeField] private Transform _campsPos;
     [SerializeField] private Transform _enemyPos;
-    public bool _enemyInCamp;
+    public bool _enemyInCamp = false;
+    public Enemy _enemy;
+    protected float _distance;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +24,23 @@ public class EnemyMovement : Enemy
     // Update is called once per frame
     void Update()
     {
-        if (_enemyInCamp)
+        _distance = Vector3.Distance(_campsPos.position, transform.position);
+
+        if (_distance <= 6)
         {
-            StartCoroutine(MoveInCamp());
+            _enemyInCamp = true;
         }
+    }
+
+    public void StopEnemy()
+    {
+        _enemy._speed = 0;
+    }
+
+    public void GoToPlayer()
+    {
+        _enemy._speed = 2;
+        transform.position = Vector3.MoveTowards(transform.position, _enemy._player.position, _enemy._speed * Time.deltaTime);
     }
 
     public void MoveToCamp()
@@ -29,33 +48,9 @@ public class EnemyMovement : Enemy
         Vector3 enemyPos = new Vector3(_enemyPos.position.x, transform.position.y, _enemyPos.position.z);
         Vector3 _campPosition = new Vector3(_campsPos.position.x, transform.position.y, _campsPos.position.z);
 
-        if (enemyPos.x > _campPosition.x + _camp._radius || enemyPos.x < _campPosition.x + _camp._radius)
+        if(_distance > 6)
         {
-            if (enemyPos.z > _campPosition.z + _camp._radius || enemyPos.z < _campPosition.z + _camp._radius)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, _campsPos.position, _speed * Time.deltaTime);
-            }
-        }
-        _enemyInCamp = true;
-    }
-
-    private IEnumerator MoveInCamp()
-    {
-
-        Vector3 enemyPos = new Vector3(_enemyPos.position.x, transform.position.y, _enemyPos.position.z);
-        Vector3 _campPosition = new Vector3(_campsPos.position.x, transform.position.y, _campsPos.position.z);
-
-        yield return new WaitForSeconds(5f);
-
-        if (enemyPos.x < _campPosition.x + _camp._radius || enemyPos.x > _campPosition.x + _camp._radius)
-        {
-            if (enemyPos.z < _campPosition.z + _camp._radius || enemyPos.z > _campPosition.z + _camp._radius)
-            {
-                float _xPos = Random.Range(-6, 6);
-                float _zPos = Random.Range(-6, 6);
-
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(_xPos, 0, _zPos), _speed * Time.deltaTime);
-            }
+            transform.position = Vector3.MoveTowards(transform.position, _campsPos.position, _enemy._speed * Time.deltaTime);
         }
     }
 }

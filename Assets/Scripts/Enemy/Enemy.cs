@@ -6,8 +6,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     // Stats
-    protected float _health;
-    [SerializeField] protected float _speed;
+    public float _health;
+    [SerializeField] public float _speed;
     [SerializeField] protected float _attackDamage;
     [SerializeField] protected float _attackSpeed;
     [SerializeField] protected float _maxRange;
@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     protected float _distance;
 
     // Other
-    protected Transform _player;
+    public Transform _player;
 
     // Start is called before the first frame update
     protected void Start()
@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
     protected void Update()
     {
         // Get player position
-        Vector3 targetpos = new Vector3(_player.position.x, transform.position.y, _player.position.z);
+        //Vector3 targetpos = new Vector3(_player.position.x, transform.position.y, _player.position.z);
 
         if (_health <= 0)
         {
@@ -50,6 +50,7 @@ public class Enemy : MonoBehaviour
     {
 
         yield return new WaitForSeconds(0.0000001f);
+        Debug.Log("dead");
 
         Destroy(gameObject);
     }

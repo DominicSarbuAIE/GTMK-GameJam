@@ -24,7 +24,7 @@ public class SniperGuy : Enemy
 
         if (_distance < _minRange)
         {
-            StopEnemy();
+            _movement.StopEnemy();
         }
         else if(_distance > _maxRange)
         {
@@ -34,18 +34,8 @@ public class SniperGuy : Enemy
         else
         {
             // Move Towards "targetpos" (Player)
-            GoToPlayer();
+            _movement.GoToPlayer();
         }
     }
 
-    private void StopEnemy()
-    {
-        _speed = 0;
-    }
-
-    private void GoToPlayer()
-    {
-        _speed = 2;
-        transform.position = Vector3.MoveTowards(transform.position, _player.position, _speed * Time.deltaTime);
-    }
 }
