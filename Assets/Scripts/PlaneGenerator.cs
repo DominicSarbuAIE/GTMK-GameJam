@@ -11,19 +11,21 @@ public class PlaneGenerator : MonoBehaviour
     [SerializeField] private int radius;
     [SerializeField] private int planeOffset;
 
-    private Vector3 startPos = Vector3.zero;
-    private int XPlayerMove => (int)(_player.transform.position.x - startPos.x);
-    private int XPlayerLocation => (int)Mathf.Floor(_player.transform.position.x / planeOffset) * planeOffset;
+    private Vector3 playerPrevPos = Vector3.zero;
+    private Vector3 playerDeltaMove = Vector3.zero;
 
-    private int ZPlayerMove => (int)(_player.transform.position.z - startPos.z);
+    private int XPlayerLocation => (int)Mathf.Floor(_player.transform.position.x / planeOffset) * planeOffset;
     private int ZPlayerLocation => (int)Mathf.Floor(_player.transform.position.z / planeOffset) * planeOffset;
 
     private Hashtable tilePlane = new Hashtable();
+
+    private bool started;
 
     void Start()
     {
         // identify player object using Player tag
         _player = GameObject.FindWithTag("Player").transform;
+        started = true;
     }
 
     // Update is called once per frame
@@ -34,11 +36,32 @@ public class PlaneGenerator : MonoBehaviour
 
     private void GenerateWorld()
     {
-        if (startPos == Vector3.zero)
+        playerDeltaMove.x = _player.transform.position.x - playerPrevPos.x;
+        playerDeltaMove.z = _player.transform.position.z - playerPrevPos.z;
+
+        if (started)
         {
-            for (int x = -radius; x < radius - 1; x++)
+            for (int x = -radius; x <= radius; ++x)
             {
-                for (int z = -radius; z < radius - 1; z++)
+                for (int z = -radius; z <= radius; ++z)
+                {
+                    Vector3 pos = new Vector3((x * planeOffset + XPlayerLocation), 0, (z * planeOffset + ZPlayerLocation));
+
+                    if (!tilePlane.Contains(pos))
+                    {
+                        GameObject tile = Instantiate(plane, pos, Quaternion.identity, gameObject.transform);
+                        tilePlane.Add(pos, tile);
+                    }
+                }
+            }
+            started = false;
+        }
+
+        if (hasPlayerMoved(_player.transform.position.x, _player.transform.position.z))
+        {
+            for (int x = -radius; x <= radius; x++)
+            {
+                for (int z = -radius; z <= radius; z++)
                 {
                     Vector3 pos = new Vector3((x * planeOffset + XPlayerLocation), 0, (z * planeOffset + ZPlayerLocation));
 
@@ -51,27 +74,13 @@ public class PlaneGenerator : MonoBehaviour
             }
         }
 
-        if (hasPlayerMoved(XPlayerMove, ZPlayerMove))
-        {
-            for (int x = -radius; x < radius; x++)
-            {
-                for (int z = -radius; z < radius; z++)
-                {
-                    Vector3 pos = new Vector3((x * planeOffset + XPlayerLocation), 0, (z * planeOffset + ZPlayerLocation));
-
-                    if (!tilePlane.Contains(pos))
-                    {
-                        GameObject tile = Instantiate(plane, pos, Quaternion.identity, gameObject.transform);
-                        tilePlane.Add(pos, tile);
-                    }
-                }
-            }
-        }
+        playerPrevPos.x = _player.transform.position.x;
+        playerPrevPos.z = _player.transform.position.z;
     }
 
-    private bool hasPlayerMoved(int playerX, int playerZ)
+    private bool hasPlayerMoved(float playerX, float playerZ)
     {
-        if (Mathf.Abs(XPlayerMove) >= planeOffset || Mathf.Abs(ZPlayerMove) >= planeOffset)
+        if (Mathf.Abs(playerX) >= planeOffset || Mathf.Abs(playerZ) >= planeOffset)
         {
             return true;
         }

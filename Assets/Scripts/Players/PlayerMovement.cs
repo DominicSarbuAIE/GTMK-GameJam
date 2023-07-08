@@ -20,9 +20,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //move player
-        _rb.position += new Vector3(_movement.x, 0, _movement.y) * _speed * Time.deltaTime;
-
         Mouse mouse = Mouse.current;
         Ray camRay = Camera.main.ScreenPointToRay(mouse.position.ReadValue());
         Plane plane = new Plane(Vector3.up, Vector3.zero);
@@ -35,6 +32,12 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0.0f, rot, 0.0f); // Body rotation.
         }
 
+    }
+
+    void FixedUpdate()
+    {
+        //move player
+        _rb.position += new Vector3(_movement.x, 0, _movement.y) * _speed * Time.fixedDeltaTime;
     }
 
     public void OnMove(InputValue value)
