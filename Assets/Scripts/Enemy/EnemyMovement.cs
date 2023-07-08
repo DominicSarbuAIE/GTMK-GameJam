@@ -8,7 +8,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 [RequireComponent(typeof(Camp))]
 public class EnemyMovement : MonoBehaviour
 {
-    public Camp _camp;
+    //public Camp _camp;
     [SerializeField] private Transform _campsPos;
     [SerializeField] private Transform _enemyPos;
     public bool _enemyInCamp = false;
