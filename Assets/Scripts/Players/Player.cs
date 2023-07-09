@@ -18,14 +18,18 @@ public class Player : MonoBehaviour
     private Rigidbody _rb;
     private Vector2 _movement;
     Enemy _enemy;
+    PlayerHealthBar _playerHealthBar;
 
     protected void Start()
     {
         _enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+        _playerHealthBar = GetComponent<PlayerHealthBar>();
 
         // Player Movement
         _rb = GetComponent<Rigidbody>();
         _movement = new Vector2(0, 0);
+
+        _playerHealthBar.SetMaxHealth(_maxHealth);
     }
 
     protected void Update()
@@ -59,5 +63,6 @@ public class Player : MonoBehaviour
     {
         _rb.AddForce(transform.forward * _knockback);
         _health -= _damage;
+        _playerHealthBar.ChangeHealthBar(_health);
     }
 }
