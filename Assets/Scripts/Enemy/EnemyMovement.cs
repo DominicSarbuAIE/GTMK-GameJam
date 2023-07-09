@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
 {
     //public Camp _camp;
     [SerializeField] private Transform _campsPos;
-    [SerializeField] private Transform _enemyPos;
+    //[SerializeField] private Transform _enemyPos;
     public bool _enemyInCamp = false;
     public Enemy _enemy;
     protected float _distance;
@@ -46,14 +46,14 @@ public class EnemyMovement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, _enemy._playerTransform.position, _enemy._speed * Time.deltaTime);
     }
 
-    public void MoveToCamp()
-    {
-        Vector3 enemyPos = new Vector3(_enemyPos.position.x, transform.position.y, _enemyPos.position.z);
-        Vector3 _campPosition = new Vector3(_campsPos.position.x, transform.position.y, _campsPos.position.z);
-
-        if(_distance > 6)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, _campsPos.position, _enemy._speed * Time.deltaTime);
-        }
-    }
+    //public void MoveToCamp()
+    //{
+    //    Vector3 enemyPos = new Vector3(_enemyPos.position.x, transform.position.y, _enemyPos.position.z);
+    //    Vector3 _campPosition = new Vector3(_campsPos.position.x, transform.position.y, _campsPos.position.z);
+    //
+    //    if(_distance > 6)
+    //    {
+    //        transform.position = Vector3.MoveTowards(transform.position, _campsPos.position, _enemy._speed * Time.deltaTime);
+    //    }
+    //}
 }

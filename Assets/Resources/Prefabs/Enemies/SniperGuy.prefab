@@ -146,8 +146,17 @@ MonoBehaviour:
   _playerTransform: {fileID: 0}
 =======
     m_Bits: 128
+<<<<<<< HEAD
+  _attackRange: 0
+  _attackDelay: 0
+  _attackDamage: 0
+  _isAttacking: 0
+  _canAttack: 1
+  _playerTransform: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
+=======
   _player: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
 >>>>>>> origin/main:Assets/Resources/Prefabs/Enemies/SniperGuy.prefab
+>>>>>>> origin/main
   _movement: {fileID: 1142853075}
 --- !u!114 &1142853075
 MonoBehaviour:
@@ -161,8 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9089a2cedfe8784f9b8610a8c21a0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _campsPos: {fileID: 0}
-  _enemyPos: {fileID: 8438217198891224385}
   _enemyInCamp: 0
   _enemy: {fileID: 1142853073}
   _rotationSpeed: 5

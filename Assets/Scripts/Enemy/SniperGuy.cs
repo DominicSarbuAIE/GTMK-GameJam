@@ -29,7 +29,7 @@ public class SniperGuy : Enemy
         else if(_distance > _maxRange)
         {
             _movement._enemyInCamp = false;
-            _movement.MoveToCamp();
+            //_movement.MoveToCamp();
         }
         else
         {
