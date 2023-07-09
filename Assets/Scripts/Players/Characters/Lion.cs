@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Lion : Player
@@ -14,6 +15,10 @@ public class Lion : Player
     void Update()
     {
         base.Update();
+        if(_health <= 0)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     void FixedUpdate()
@@ -28,4 +33,6 @@ public class Lion : Player
         _health -= _damage;
         _playerHealthBar.ChangeHealthBar(_health);
     }
+
+
 }
