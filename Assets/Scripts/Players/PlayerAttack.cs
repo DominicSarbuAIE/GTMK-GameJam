@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private Transform _attackPoint;
     [SerializeField] private float _rangeOfAttack;
-    [SerializeField] private LayerMask Enemy;
+    [SerializeField] private LayerMask _enemy;
     [SerializeField] private float _damage;
     [SerializeField]private Color gizmoIdleColor = Color.green;
     [SerializeField]private bool showGizmo = true;
@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
-        Collider[] _hitEnemys = Physics.OverlapSphere(_attackPoint.position, _rangeOfAttack, Enemy);
+        Collider[] _hitEnemys = Physics.OverlapSphere(_attackPoint.position, _rangeOfAttack, _enemy);
 
         foreach(Collider enemys in _hitEnemys)
         {

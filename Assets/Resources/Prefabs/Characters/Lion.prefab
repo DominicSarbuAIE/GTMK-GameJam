@@ -162,9 +162,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackPoint: {fileID: 5408648777587848897}
   _rangeOfAttack: 0.5
-  Enemy:
+  _enemy:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   _damage: 2
   gizmoIdleColor: {r: 0, g: 1, b: 0, a: 1}
   showGizmo: 1
