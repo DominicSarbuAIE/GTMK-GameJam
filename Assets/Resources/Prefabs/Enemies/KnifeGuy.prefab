@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6089702695194759544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 64, y: 2, z: 5}
+  m_LocalPosition: {x: 5, y: 2, z: -89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -96,7 +96,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6089702695194759544}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -140,8 +140,6 @@ MonoBehaviour:
   _attackRange: 0
   _attackDelay: 0
   _attackDamage: 1
-  _isAttacking: 0
-  _canAttack: 1
   _playerTransform: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
   _force: -500
 --- !u!114 &746555789144185245
@@ -172,6 +170,7 @@ GameObject:
   - component: {fileID: 8747765793300531608}
   - component: {fileID: 5519346294238006408}
   - component: {fileID: 8589691392534773944}
+  - component: {fileID: 6159542232804958635}
   m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
@@ -209,7 +208,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8517776707953356117}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -252,8 +251,21 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8517776707953356117}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0457678, y: 0.43606848, z: 1.0457679}
+  m_Center: {x: -0.034219265, y: -0.059628315, z: 0}
+--- !u!114 &6159542232804958635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517776707953356117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bacb3aad82da8144ca5b74a5a71426ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1

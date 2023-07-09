@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Collison : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int _damage;
+    void OnTriggerEnter(Collider other)
     {
-        
-    }
+        Lion eh = other.gameObject.GetComponent<Lion>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (eh)
+        {
+            Debug.Log("hit");
+            eh.DoDamage(_damage);
+        }
+
     }
 }

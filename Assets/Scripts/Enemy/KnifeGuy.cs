@@ -43,17 +43,4 @@ public class KnifeGuy : Enemy
         _speed = 2;
         transform.position = Vector3.MoveTowards(transform.position, _playerTransform.position, _speed * Time.deltaTime);
     }
-    void OnTriggerEnter(Collider other)
-    {
-
-        Lion eh = other.gameObject.GetComponent<Lion>();
-
-        if (eh)
-        {
-            Debug.Log("hit");
-            Destroy(gameObject);
-            eh.DoDamage(_attackDamage);
-        }
-
-    }
 }
