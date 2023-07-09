@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     //public Camp _camp;
-    [SerializeField] private Transform _campsPos;
+    //[SerializeField] private Transform _campsPos;
     //[SerializeField] private Transform _enemyPos;
     public bool _enemyInCamp = false;
     public Enemy _enemy;
@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _distance = Vector3.Distance(_campsPos.position, transform.position);
+        //_distance = Vector3.Distance(_campsPos.position, transform.position);
 
         if (_distance <= 6)
         {
