@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected int _attackDamage;
 
     // Other
-    Player _player;
+    Lion _player;
     public bool _isAttacking = false;
     protected float _distance;
     [SerializeField] private bool _canAttack = true;
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     protected void Start()
     {
         // identify player object using Player tag
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Lion>();
         _playerTransform = GameObject.FindWithTag("Player").transform;
         _health = _maxHealth;
         _rigidbody = this.GetComponent<Rigidbody>();

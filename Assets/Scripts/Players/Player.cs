@@ -6,24 +6,25 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     // Stats
-    protected float _health;
-    [SerializeField] protected float _maxHealth;
+    public int _health;
+    [SerializeField] protected int _maxHealth;
     [SerializeField] protected float _speed;
     [SerializeField] protected float _attackDamage;
     [SerializeField] protected float _attackSpeed;
     [SerializeField] protected float _attackRange;
-    [SerializeField] private float _knockback;
+    [SerializeField] protected float _knockback;
 
     // Other
-    private Rigidbody _rb;
+    protected Rigidbody _rb;
     private Vector2 _movement;
     Enemy _enemy;
-    PlayerHealthBar _playerHealthBar;
+    public PlayerHealthBar _playerHealthBar;
 
     protected void Start()
     {
         _enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
-        _playerHealthBar = GetComponent<PlayerHealthBar>();
+        //_playerHealthBar = GetComponent<PlayerHealthBar>();
+        _health = _maxHealth;
 
         // Player Movement
         _rb = GetComponent<Rigidbody>();
@@ -57,12 +58,5 @@ public class Player : MonoBehaviour
     protected void OnMove(InputValue value)
     {
         _movement = value.Get<Vector2>();
-    }
-
-    public void DoDamage(int _damage)
-    {
-        _rb.AddForce(transform.forward * _knockback);
-        _health -= _damage;
-        _playerHealthBar.ChangeHealthBar(_health);
     }
 }
