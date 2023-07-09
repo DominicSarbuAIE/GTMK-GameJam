@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 36f174aaf631d1845a7bea17d0bcf457, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,20 +129,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0
-  _speed: 0
-  _maxRange: 0
-  _minRange: 0
-  _maxHealth: 0
+  _speed: 2
+  _maxRange: 20
+  _minRange: 10
+  _maxHealth: 3
   _playerLayMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   _attackRange: 0
   _attackDelay: 0
-  _attackDamage: 0
+  _attackDamage: 1
   _isAttacking: 0
   _canAttack: 1
-  _playerTransform: {fileID: 0}
-  _movement: {fileID: 0}
+  _playerTransform: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
+  _movement: {fileID: 3963473129848191501}
 --- !u!114 &3963473129848191501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +157,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _campsPos: {fileID: 0}
   _enemyInCamp: 0
-  _enemy: {fileID: 0}
-  _rotationSpeed: 0
-  _player: {fileID: 0}
+  _enemy: {fileID: 3973224246062263845}
+  _rotationSpeed: 2
+  _player: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
