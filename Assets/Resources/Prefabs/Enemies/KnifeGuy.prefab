@@ -8,11 +8,213 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 2145713920239347695}
   - component: {fileID: 2145713920239347682}
   - component: {fileID: 2145713920239347681}
   - component: {fileID: 2145713920239347680}
   m_Layer: 6
+=======
+  - component: {fileID: 8938345993471419534}
+  - component: {fileID: 4410316577552887656}
+  - component: {fileID: 6859135930853086901}
+  - component: {fileID: 2957923526846376096}
+  - component: {fileID: 1607363094}
+<<<<<<< HEAD:Assets/Resources/Prefabs/Enemies/KnifeGuy.prefab
+  - component: {fileID: 1607363093}
+  - component: {fileID: 1607363095}
+=======
+  - component: {fileID: 4600626110112231062}
+  - component: {fileID: 2743836910196973448}
+  - component: {fileID: 1976823515312365478}
+>>>>>>> origin/main:Assets/Prefabs/Enemies/KnifeGuy.prefab
+  m_Layer: 0
+  m_Name: KnifeGuy
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8938345993471419534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056091839950854225}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 24.315596, y: 14.295413, z: -7.170578}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3836599647725550595}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4410316577552887656
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056091839950854225}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &6859135930853086901
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056091839950854225}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c4d91fbbbca124f409f30b4507d6b362, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2957923526846376096
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056091839950854225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0801215, y: 1, z: 1.0234013}
+  m_Center: {x: 0.0036418438, y: 0, z: 0.0015654564}
+--- !u!54 &1607363094
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056091839950854225}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4600626110112231062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056091839950854225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81c60f41561c2d40a452c7a62c80271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 0
+  _speed: 5
+  _maxRange: 14
+  _minRange: 0
+  _maxHealth: 4
+  _playerLayMask:
+    serializedVersion: 2
+    m_Bits: 128
+<<<<<<< HEAD:Assets/Prefabs/Enemies/KnifeGuy.prefab
+  _attackRange: 0
+  _attackDelay: 0
+  _attackDamage: 0
+  _isAttacking: 0
+  _canAttack: 1
+  _playerTransform: {fileID: 0}
+=======
+<<<<<<< HEAD:Assets/Resources/Prefabs/Enemies/KnifeGuy.prefab
+  _player: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
+--- !u!114 &1607363095
+=======
+  _player: {fileID: 0}
+>>>>>>> origin/main:Assets/Resources/Prefabs/Enemies/KnifeGuy.prefab
+--- !u!114 &2743836910196973448
+>>>>>>> origin/main:Assets/Prefabs/Enemies/KnifeGuy.prefab
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056091839950854225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9089a2cedfe8784f9b8610a8c21a0d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _campsPos: {fileID: 0}
+  _enemyPos: {fileID: 8938345993471419534}
+  _enemyInCamp: 0
+<<<<<<< HEAD:Assets/Resources/Prefabs/Enemies/KnifeGuy.prefab
+  _enemy: {fileID: 1607363093}
+  _rotationSpeed: 5
+  _player: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
+=======
+  _enemy: {fileID: 0}
+  _player: {fileID: 0}
+--- !u!114 &1976823515312365478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056091839950854225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84cfa5af3d78604ab898c405f917e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0
+>>>>>>> origin/main:Assets/Prefabs/Enemies/KnifeGuy.prefab
+--- !u!1 &8111721842926782907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3836599647725550595}
+  - component: {fileID: 677382039237749670}
+  - component: {fileID: 8520622115927183243}
+  - component: {fileID: 2931258167835268781}
+  m_Layer: 0
+>>>>>>> origin/main
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

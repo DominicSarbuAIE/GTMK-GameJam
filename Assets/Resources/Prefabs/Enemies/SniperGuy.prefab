@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1142853075}
   m_Layer: 0
   m_Name: SniperGuy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,13 +136,27 @@ MonoBehaviour:
   _maxHealth: 2
   _playerLayMask:
     serializedVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Enemies/SniperGuy.prefab
+    m_Bits: 0
+  _attackRange: 0
+  _attackDelay: 0
+  _attackDamage: 0
+  _isAttacking: 0
+  _canAttack: 1
+  _playerTransform: {fileID: 0}
+=======
     m_Bits: 128
+<<<<<<< HEAD
   _attackRange: 0
   _attackDelay: 0
   _attackDamage: 0
   _isAttacking: 0
   _canAttack: 1
   _playerTransform: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
+=======
+  _player: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
+>>>>>>> origin/main:Assets/Resources/Prefabs/Enemies/SniperGuy.prefab
+>>>>>>> origin/main
   _movement: {fileID: 1142853075}
 --- !u!114 &1142853075
 MonoBehaviour:
