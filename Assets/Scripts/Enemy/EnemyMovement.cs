@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 [RequireComponent(typeof(Enemy))]
 [RequireComponent(typeof(Camp))]
@@ -15,16 +13,24 @@ public class EnemyMovement : MonoBehaviour
     public Enemy _enemy;
     protected float _distance;
 
+    public Transform _player;
+
+    private Rigidbody _rb;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        _player = GameObject.FindWithTag("Player").transform;
+        _rb = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
         _distance = Vector3.Distance(_campsPos.position, transform.position);
+        Vector3 _direction = _player.position - transform.position;
+        float _angle = Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg;
+        _rb.rotation = Quaternion.LookRotation(_direction);
 
         if (_distance <= 6)
         {
