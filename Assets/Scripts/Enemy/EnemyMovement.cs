@@ -28,6 +28,8 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         //_distance = Vector3.Distance(_campsPos.position, transform.position);
+        Vector3 _dir = _player.position - transform.position;
+        _rb.rotation = Quaternion.LookRotation(_dir);
 
         if (_distance <= 6)
         {

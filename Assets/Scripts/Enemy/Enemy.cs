@@ -14,22 +14,25 @@ public class Enemy : MonoBehaviour
     [SerializeField] private LayerMask _playerLayMask;
     [SerializeField] private float _attackRange;
     [SerializeField] private float _attackDelay;
-    [SerializeField] protected int _attackDamage;
+    public int _attackDamage;
 
     // Other
-    Player _player;
-    public bool _isAttacking = false;
+    Lion _player;
+    //public bool _isAttacking = false;
     protected float _distance;
-    [SerializeField] private bool _canAttack = true;
+    //[SerializeField] private bool _canAttack = true;
     public Transform _playerTransform;
+    private Rigidbody _rigidbody;
+    [SerializeField] private float _force;
 
     // Start is called before the first frame update
     protected void Start()
     {
         // identify player object using Player tag
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Lion>();
         _playerTransform = GameObject.FindWithTag("Player").transform;
         _health = _maxHealth;
+        _rigidbody = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -39,18 +42,17 @@ public class Enemy : MonoBehaviour
         //Vector3 targetpos = new Vector3(_player.position.x, transform.position.y, _player.position.z);
         _distance = Vector3.Distance(_playerTransform.position, transform.position);
 
-        MeleeCanAttack();
+        //MeleeCanAttack();
 
         if (_health <= 0)
         {
             StartCoroutine(OnDeath());
         }
-
-        
     }
 
     public void TakeDamage(float damage)
     {
+        _rigidbody.AddForce(transform.forward * _force);
         _health -= damage;
         Debug.Log(_health);
     }
@@ -64,42 +66,42 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player" && _isAttacking)
-        {
-            Debug.Log("Hit");
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        Debug.Log("Hit");
+    //
+    //        _player.DoDamage(_attackDamage);
+    //
+    //    }
+    //}
 
-            _player.DoDamage(_attackDamage);
-
-        }
-    }
-
-    private void MeleeCanAttack()
-    {
-        if (_distance < 2)
-        {
-            if (_canAttack)
-            {
-                Attack();
-            }
-        }
-    }
-    private void Attack()
-    {
-        _isAttacking = true;
-        _speed = 0;
-        StartCoroutine(AttackCooldown());
-        _canAttack = false;
-    }
-
-    IEnumerator AttackCooldown()
-    {
-        yield return new WaitForSeconds(_attackDelay);
-        _isAttacking = false;
-        _speed = 2;
-        _canAttack = true;
-    }
+   //private void MeleeCanAttack()
+   //{
+   //    if (_distance < 2)
+   //    {
+   //        if (_canAttack)
+   //        {
+   //            Attack();
+   //        }
+   //    }
+   //}
+   //private void Attack()
+   //{
+   //    _isAttacking = true;
+   //    _speed = 0;
+   //    StartCoroutine(AttackCooldown());
+   //    _canAttack = false;
+   //}
+   //
+   //IEnumerator AttackCooldown()
+   //{
+   //    yield return new WaitForSeconds(_attackDelay);
+   //    _isAttacking = false;
+   //    _speed = 2;
+   //    _canAttack = true;
+   //}
 
     
 }
