@@ -14,7 +14,7 @@ public class Camp : MonoBehaviour
     private int _enemyNumber;
     private GameObject _enemy;
     [SerializeField] private GameObject[] _enemys;
-    [SerializeField] private Transform _enemyLocation;
+    private Vector3 _enemyLocation;
 
 
     // Start is called before the first frame update
@@ -28,9 +28,9 @@ public class Camp : MonoBehaviour
             _enemy = _enemys[_enemyNumber];
             _xLocation = transform.position.x + Random.Range(-6,6);
             _zLocation = transform.position.z + Random.Range(-6,6);
-            _enemyLocation.position = new Vector3(_xLocation, 2, _zLocation);
+            _enemyLocation = new Vector3(_xLocation, 2, _zLocation);
 
-            Instantiate(_enemy, _enemyLocation.position, _enemyLocation.rotation);
+            Instantiate(_enemy, _enemyLocation, Quaternion.identity);
         }
     }
 
