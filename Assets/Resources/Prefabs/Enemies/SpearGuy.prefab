@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3760354992707687553
+--- !u!1 &8004964399904716570
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3760354992707687546}
-  - component: {fileID: 3760354992707687547}
-  - component: {fileID: 3760354992707687548}
-  - component: {fileID: 3760354992707687549}
-  - component: {fileID: 3760354992707687550}
-  - component: {fileID: 3760354992707687551}
-  - component: {fileID: 3760354992707687552}
-  m_Layer: 6
+  - component: {fileID: 5333858655929964084}
+  - component: {fileID: 8460795941953805923}
+  - component: {fileID: 4471709559130344578}
+  - component: {fileID: 7321558131264194405}
+  - component: {fileID: 7796371416290422863}
+  - component: {fileID: 6990617387060413240}
+  - component: {fileID: 3587658524124397567}
+  m_Layer: 0
   m_Name: SpearGuy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3760354992707687546
+--- !u!4 &5333858655929964084
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3760354992707687553}
+  m_GameObject: {fileID: 8004964399904716570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4842324, y: 0.53, z: -1.71}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3760354992707687547
+--- !u!33 &8460795941953805923
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3760354992707687553}
+  m_GameObject: {fileID: 8004964399904716570}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3760354992707687548
+--- !u!23 &4471709559130344578
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3760354992707687553}
+  m_GameObject: {fileID: 8004964399904716570}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc70cbf72f6add84fa8ca18ddb1fa0f8, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,26 +87,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3760354992707687549
+--- !u!65 &7321558131264194405
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3760354992707687553}
+  m_GameObject: {fileID: 8004964399904716570}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &3760354992707687550
+--- !u!54 &7796371416290422863
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3760354992707687553}
+  m_GameObject: {fileID: 8004964399904716570}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -116,59 +116,46 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3760354992707687551
+--- !u!114 &6990617387060413240
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3760354992707687553}
+  m_GameObject: {fileID: 8004964399904716570}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50c06e1a0c8c05a408a51055ab50a705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0
-  _speed: 4
-  _maxRange: 14
-  _minRange: 3
-  _maxHealth: 3
+  _speed: 0
+  _maxRange: 0
+  _minRange: 0
+  _maxHealth: 0
   _playerLayMask:
     serializedVersion: 2
-    m_Bits: 128
-<<<<<<< HEAD
-  _attackRange: 0
-  _attackDelay: 0
-  _attackDamage: 2
-  _isAttacking: 0
-  _canAttack: 1
-  _playerTransform: {fileID: 0}
---- !u!114 &3760354992707687552
-=======
-<<<<<<< HEAD:Assets/Prefabs/Enemies/SpearGuy.prefab
+    m_Bits: 0
   _attackRange: 0
   _attackDelay: 0
   _attackDamage: 0
   _isAttacking: 0
   _canAttack: 1
   _playerTransform: {fileID: 0}
-=======
-  _player: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
->>>>>>> origin/main:Assets/Resources/Prefabs/Enemies/SpearGuy.prefab
---- !u!114 &1612632939
->>>>>>> origin/main
+--- !u!114 &3587658524124397567
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3760354992707687553}
+  m_GameObject: {fileID: 8004964399904716570}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9089a2cedfe8784f9b8610a8c21a0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _campsPos: {fileID: 0}
   _enemyInCamp: 0
-  _enemy: {fileID: 3760354992707687551}
-  _rotationSpeed: 5
+  _enemy: {fileID: 0}
+  _rotationSpeed: 0
   _player: {fileID: 0}
