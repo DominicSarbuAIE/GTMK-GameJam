@@ -9,4 +9,9 @@ public class UIButton1 : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene(3);
+    }
 }
