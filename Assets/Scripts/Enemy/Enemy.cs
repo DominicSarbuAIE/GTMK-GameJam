@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour
     protected float _distance;
     [SerializeField] private bool _canAttack = true;
     public Transform _playerTransform;
+    private Rigidbody _rigidbody;
+    [SerializeField] private float _force;
 
     // Start is called before the first frame update
     protected void Start()
@@ -30,6 +32,7 @@ public class Enemy : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         _playerTransform = GameObject.FindWithTag("Player").transform;
         _health = _maxHealth;
+        _rigidbody = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -45,12 +48,11 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(OnDeath());
         }
-
-        
     }
 
     public void TakeDamage(float damage)
     {
+        _rigidbody.AddForce(transform.forward * _force);
         _health -= damage;
         Debug.Log(_health);
     }

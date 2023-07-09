@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6089702695194759544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59, y: 2, z: -18}
+  m_LocalPosition: {x: 66, y: 2, z: 69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -142,6 +142,7 @@ MonoBehaviour:
   _isAttacking: 0
   _canAttack: 1
   _playerTransform: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
+  _force: -500
 --- !u!114 &746555789144185245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9089a2cedfe8784f9b8610a8c21a0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _campsPos: {fileID: 0}
   _enemyInCamp: 0
   _enemy: {fileID: 1487729212521385224}
   _rotationSpeed: 2

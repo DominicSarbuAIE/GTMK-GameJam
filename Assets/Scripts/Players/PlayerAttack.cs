@@ -34,6 +34,7 @@ public class PlayerAttack : MonoBehaviour
         {
             Debug.Log("we hit enemy");
             enemys.GetComponent<Enemy>().TakeDamage(_damage);
+
         }
     }
 
