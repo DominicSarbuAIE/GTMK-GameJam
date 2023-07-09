@@ -20,7 +20,7 @@ public class SniperGuy : Enemy
     {
         base.Update();
 
-        _distance = Vector3.Distance(_player.position, transform.position);
+        _distance = Vector3.Distance(_playerTransform.position, transform.position);
 
         if (_distance < _minRange)
         {

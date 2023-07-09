@@ -17,7 +17,7 @@ public class SpearGuy : Enemy
     {
         base.Update();
 
-        _distance = Vector3.Distance(_player.position, transform.position);
+        _distance = Vector3.Distance(_playerTransform.position, transform.position);
 
         if (_distance < _minRange)
         {
@@ -42,6 +42,6 @@ public class SpearGuy : Enemy
     private void GoToPlayer()
     {
         _speed = 2;
-        transform.position = Vector3.MoveTowards(transform.position, _player.position, _speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, _playerTransform.position, _speed * Time.deltaTime);
     }
 }

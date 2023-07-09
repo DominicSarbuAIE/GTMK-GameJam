@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
@@ -13,14 +14,16 @@ public class Player : MonoBehaviour
     [SerializeField] protected float _attackSpeed;
     [SerializeField] protected float _attackRange;
     [SerializeField] private float _knockback;
-    public KnifeMelee _knife;
 
     // Other
     private Rigidbody _rb;
     private Vector2 _movement;
+    Enemy _enemy;
 
     protected void Start()
     {
+        _enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+
         // Player Movement
         _rb = GetComponent<Rigidbody>();
         _movement = new Vector2(0, 0);
@@ -51,16 +54,6 @@ public class Player : MonoBehaviour
     protected void OnMove(InputValue value)
     {
         _movement = value.Get<Vector2>();
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player" && _knife._isAttacking)
-        {
-            Debug.Log("Hit");
-            DoDamage(_knife._damage);
-        }
     }
 
     public void DoDamage(int _damage)

@@ -131,8 +131,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 0
   _speed: 0
-  _attackDamage: 0
-  _attackSpeed: 0
   _maxRange: 0
   _minRange: 0
   _maxHealth: 10
@@ -152,11 +150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9089a2cedfe8784f9b8610a8c21a0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camp: {fileID: 0}
   _campsPos: {fileID: 0}
   _enemyPos: {fileID: 0}
   _enemyInCamp: 0
   _enemy: {fileID: 0}
+  _player: {fileID: 0}
 --- !u!114 &1612632940
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6859135930853086901}
   - component: {fileID: 2957923526846376096}
   - component: {fileID: 1607363094}
-  - component: {fileID: 1607363093}
-  - component: {fileID: 1607363095}
-  - component: {fileID: 1607363096}
+  - component: {fileID: 4600626110112231062}
+  - component: {fileID: 2743836910196973448}
+  - component: {fileID: 1976823515312365478}
   m_Layer: 0
   m_Name: KnifeGuy
   m_TagString: Untagged
@@ -118,7 +118,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1607363093
+--- !u!114 &4600626110112231062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,7 +139,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _player: {fileID: 0}
---- !u!114 &1607363095
+--- !u!114 &2743836910196973448
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +156,7 @@ MonoBehaviour:
   _enemyInCamp: 0
   _enemy: {fileID: 0}
   _player: {fileID: 0}
---- !u!114 &1607363096
+--- !u!114 &1976823515312365478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
