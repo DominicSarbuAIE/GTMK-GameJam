@@ -130,9 +130,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 0
   _speed: 0
+<<<<<<< HEAD:Assets/Resources/Prefabs/Enemies/SpearGuy.prefab
   _maxRange: 14
   _minRange: 4
   _maxHealth: 3
+=======
+  _maxRange: 0
+  _minRange: 0
+  _maxHealth: 10
+>>>>>>> origin/main:Assets/Prefabs/Enemies/SpearGuy.prefab
   _playerLayMask:
     serializedVersion: 2
     m_Bits: 128
@@ -152,6 +158,24 @@ MonoBehaviour:
   _campsPos: {fileID: 0}
   _enemyPos: {fileID: 2801253939350374321}
   _enemyInCamp: 0
+<<<<<<< HEAD:Assets/Resources/Prefabs/Enemies/SpearGuy.prefab
   _enemy: {fileID: 1612632937}
   _rotationSpeed: 5
   _player: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
+=======
+  _enemy: {fileID: 0}
+  _player: {fileID: 0}
+--- !u!114 &1612632940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3578253555376554717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84cfa5af3d78604ab898c405f917e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0
+>>>>>>> origin/main:Assets/Prefabs/Enemies/SpearGuy.prefab

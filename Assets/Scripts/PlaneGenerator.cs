@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+ 
 public class PlaneGenerator : MonoBehaviour
 {
     public GameObject plane;
@@ -9,6 +9,7 @@ public class PlaneGenerator : MonoBehaviour
 
     [SerializeField] private int radius;
     [SerializeField] private int planeOffset;
+    [SerializeField] private GameObject campgroundPrefab; // assign the campground prefab in the inspector
 
     private Vector3 playerPrevPos = Vector3.zero;
     private Vector3 playerDeltaMove = Vector3.zero;
@@ -32,8 +33,6 @@ public class PlaneGenerator : MonoBehaviour
     {
         GenerateWorld();
     }
-
-    public GameObject campgroundPrefab; // assign the campground prefab in the inspector
 
     private void GenerateWorld()
     {

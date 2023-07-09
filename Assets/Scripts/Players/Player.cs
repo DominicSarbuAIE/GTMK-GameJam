@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
@@ -17,9 +18,12 @@ public class Player : MonoBehaviour
     // Other
     private Rigidbody _rb;
     private Vector2 _movement;
+    Enemy _enemy;
 
     protected void Start()
     {
+        _enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+
         // Player Movement
         _rb = GetComponent<Rigidbody>();
         _movement = new Vector2(0, 0);

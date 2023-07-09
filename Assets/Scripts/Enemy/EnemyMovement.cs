@@ -28,8 +28,13 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         _distance = Vector3.Distance(_campsPos.position, transform.position);
+<<<<<<< HEAD
 
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.position - _player.transform.position), _rotationSpeed * Time.deltaTime);
+=======
+        Vector3 _direction = _player.position - transform.position;
+        _rb.rotation = Quaternion.LookRotation(_direction);
+>>>>>>> origin/main
 
         if (_distance <= 6)
         {
@@ -45,7 +50,7 @@ public class EnemyMovement : MonoBehaviour
     public void GoToPlayer()
     {
         _enemy._speed = 2;
-        transform.position = Vector3.MoveTowards(transform.position, _enemy._player.position, _enemy._speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, _enemy._playerTransform.position, _enemy._speed * Time.deltaTime);
     }
 
     public void MoveToCamp()
