@@ -22,7 +22,7 @@ public class CameraMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Vector3 targetPosition = new Vector3(_target.position.x, 0, 0);
+        Vector3 targetPosition = new Vector3(_target.position.x, _target.position.y, _target.position.z);
         RaycastHit hit;
 
         if (Physics.Raycast(_target.position, _target.position, out hit, _maxDistance, _wall))

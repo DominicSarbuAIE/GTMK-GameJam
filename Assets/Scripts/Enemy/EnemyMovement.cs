@@ -11,6 +11,7 @@ public class EnemyMovement : MonoBehaviour
     public bool _enemyInCamp = false;
     public Enemy _enemy;
     protected float _distance;
+    [SerializeField] private float _rotationSpeed;
 
     public Transform _player;
 
@@ -27,8 +28,6 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         _distance = Vector3.Distance(_campsPos.position, transform.position);
-        Vector3 _direction = _player.position - transform.position;
-        _rb.rotation = Quaternion.LookRotation(_direction);
 
         if (_distance <= 6)
         {

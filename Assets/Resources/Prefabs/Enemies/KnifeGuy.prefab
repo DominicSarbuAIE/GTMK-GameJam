@@ -13,9 +13,14 @@ GameObject:
   - component: {fileID: 6859135930853086901}
   - component: {fileID: 2957923526846376096}
   - component: {fileID: 1607363094}
+<<<<<<< HEAD:Assets/Resources/Prefabs/Enemies/KnifeGuy.prefab
+  - component: {fileID: 1607363093}
+  - component: {fileID: 1607363095}
+=======
   - component: {fileID: 4600626110112231062}
   - component: {fileID: 2743836910196973448}
   - component: {fileID: 1976823515312365478}
+>>>>>>> origin/main:Assets/Prefabs/Enemies/KnifeGuy.prefab
   m_Layer: 0
   m_Name: KnifeGuy
   m_TagString: Enemy
@@ -131,20 +136,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0
-  _speed: 0
-  _maxRange: 0
+  _speed: 5
+  _maxRange: 14
   _minRange: 0
-  _maxHealth: 10
+  _maxHealth: 4
   _playerLayMask:
     serializedVersion: 2
     m_Bits: 128
+<<<<<<< HEAD:Assets/Prefabs/Enemies/KnifeGuy.prefab
   _attackRange: 0
   _attackDelay: 0
   _attackDamage: 0
   _isAttacking: 0
   _canAttack: 1
   _playerTransform: {fileID: 0}
+=======
+<<<<<<< HEAD:Assets/Resources/Prefabs/Enemies/KnifeGuy.prefab
+  _player: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
+--- !u!114 &1607363095
+=======
+  _player: {fileID: 0}
+>>>>>>> origin/main:Assets/Resources/Prefabs/Enemies/KnifeGuy.prefab
 --- !u!114 &2743836910196973448
+>>>>>>> origin/main:Assets/Prefabs/Enemies/KnifeGuy.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,8 +171,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _campsPos: {fileID: 0}
-  _enemyPos: {fileID: 0}
+  _enemyPos: {fileID: 8938345993471419534}
   _enemyInCamp: 0
+<<<<<<< HEAD:Assets/Resources/Prefabs/Enemies/KnifeGuy.prefab
+  _enemy: {fileID: 1607363093}
+  _rotationSpeed: 5
+  _player: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
+=======
   _enemy: {fileID: 0}
   _player: {fileID: 0}
 --- !u!114 &1976823515312365478
@@ -174,6 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _radius: 0
+>>>>>>> origin/main:Assets/Prefabs/Enemies/KnifeGuy.prefab
 --- !u!1 &8111721842926782907
 GameObject:
   m_ObjectHideFlags: 0
