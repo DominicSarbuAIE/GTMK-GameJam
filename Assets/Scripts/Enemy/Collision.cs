@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
+    public KnifeMelee _knife;
+    [SerializeField] private Player _player;
+
     public void Start()
     {
         
@@ -13,9 +16,6 @@ public class Collision : MonoBehaviour
     {
         
     }
-
-    public KnifeMelee _knife;
-    public Player _player;
 
     private void OnTriggerEnter(Collider other)
     {
