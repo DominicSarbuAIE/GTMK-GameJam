@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 7796371416290422863}
   - component: {fileID: 6990617387060413240}
   - component: {fileID: 3587658524124397567}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpearGuy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

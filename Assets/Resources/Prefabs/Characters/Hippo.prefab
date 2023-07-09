@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2450803680506422387}
   - component: {fileID: 3295859468416378851}
   - component: {fileID: -680254371904190207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hippo
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -163,3 +163,4 @@ MonoBehaviour:
   _attackDamage: 0
   _attackSpeed: 0
   _attackRange: 0
+  _knockback: 0

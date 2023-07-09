@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 50863596547360301}
   - component: {fileID: 3652200164186159651}
   - component: {fileID: 3470481420249637989}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Lion
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5408648777587848897}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

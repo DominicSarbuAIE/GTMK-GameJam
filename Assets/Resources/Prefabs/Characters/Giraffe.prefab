@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8623588432605129631}
   - component: {fileID: 7090369490910471868}
   - component: {fileID: 6652393160239180253}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Giraffe
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -158,3 +158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696d1649e5138784ca94822510644bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHealth: 0
+  _speed: 0
+  _attackDamage: 0
+  _attackSpeed: 0
+  _attackRange: 0
+  _knockback: 0
