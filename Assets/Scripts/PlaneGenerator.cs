@@ -10,6 +10,7 @@ public class PlaneGenerator : MonoBehaviour
     [SerializeField] private int radius;
     [SerializeField] private int planeOffset;
     [SerializeField] private GameObject campgroundPrefab; // assign the campground prefab in the inspector
+    [SerializeField] private GameObject tree;
 
     private Vector3 playerPrevPos = Vector3.zero;
     private Vector3 playerDeltaMove = Vector3.zero;
@@ -57,6 +58,11 @@ public class PlaneGenerator : MonoBehaviour
                         {
                             Instantiate(campgroundPrefab, pos, Quaternion.identity);
                         }
+                        if (ShouldSpawnTree())
+                        {
+                            Instantiate(tree, pos, Quaternion.Euler(-90,0,0));
+                           
+                        }
                     }
                 }
             }
@@ -81,6 +87,10 @@ public class PlaneGenerator : MonoBehaviour
                         {
                             Instantiate(campgroundPrefab, pos, Quaternion.identity);
                         }
+                        if (ShouldSpawnTree())
+                        {
+                            Instantiate(tree, pos, Quaternion.Euler(-90, 0, 0));
+                        }
                     }
                 }
             }
@@ -94,6 +104,11 @@ public class PlaneGenerator : MonoBehaviour
     {
         // use a random number generator to control the frequency of spawning campgrounds
         return Random.Range(0f, 1f) < 0.05f; // 5% chance to spawn a campground
+    }
+
+    private bool ShouldSpawnTree()
+    {
+        return Random.Range(0f, 1f) < 0.05f;
     }
 
 

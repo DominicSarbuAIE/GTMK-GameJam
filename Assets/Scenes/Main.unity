@@ -877,6 +877,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 923891249095229405, guid: dbf4278ac4956ce4a91a14033411de63, type: 3}
+      propertyPath: tree
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: f9c0a5aab257a7340a93b9b4f6c6e955, type: 3}
     - target: {fileID: 4249984825908695583, guid: dbf4278ac4956ce4a91a14033411de63, type: 3}
       propertyPath: m_Name
       value: Plane Generator
