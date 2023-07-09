@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Enemy))]
-[RequireComponent(typeof(Camp))]
 public class EnemyMovement : MonoBehaviour
 {
     //public Camp _camp;
@@ -12,6 +11,7 @@ public class EnemyMovement : MonoBehaviour
     public bool _enemyInCamp = false;
     public Enemy _enemy;
     protected float _distance;
+    [SerializeField] private float _rotationSpeed;
 
     public Transform _player;
 
@@ -28,9 +28,8 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         _distance = Vector3.Distance(_campsPos.position, transform.position);
-        Vector3 _direction = _player.position - transform.position;
-        float _angle = Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg;
-        _rb.rotation = Quaternion.LookRotation(_direction);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.position - _player.transform.position), _rotationSpeed * Time.deltaTime);
 
         if (_distance <= 6)
         {
