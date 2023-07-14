@@ -265,6 +265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9089a2cedfe8784f9b8610a8c21a0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _campsPos: {fileID: 0}
+  _enemyPos: {fileID: 0}
   _enemyInCamp: 0
   _enemy: {fileID: 8928600615867233549}
   _rotationSpeed: 0
