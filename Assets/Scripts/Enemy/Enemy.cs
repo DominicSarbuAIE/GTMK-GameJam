@@ -102,6 +102,4 @@ public class Enemy : MonoBehaviour
    //    _speed = 2;
    //    _canAttack = true;
    //}
-
-    
 }

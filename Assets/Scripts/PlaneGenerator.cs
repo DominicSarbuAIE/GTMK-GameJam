@@ -67,36 +67,6 @@ public class PlaneGenerator : MonoBehaviour
             }
             started = false;
         }
-
-        //if (hasPlayerMoved(_player.transform.position.x, _player.transform.position.z))
-        //{
-        //    for (int x = -radius; x <= radius; x++)
-        //    {
-        //        for (int z = -radius; z <= radius; z++)
-        //        {
-        //            Vector3 pos = new Vector3((x * planeOffset + XPlayerLocation), 0, (z * planeOffset + ZPlayerLocation));
-
-        //            if (!tilePlane.Contains(pos))
-        //            {
-        //                GameObject tile = Instantiate(plane, pos, Quaternion.identity, gameObject.transform);
-        //                tilePlane.Add(pos, tile);
-
-        //                // check if a campground should be spawned at this position
-        //                if (ShouldSpawnCampground())
-        //                {
-        //                    Instantiate(campgroundPrefab, pos, Quaternion.identity);
-        //                }
-        //                if (ShouldSpawnTree())
-        //                {
-        //                    Instantiate(tree, pos, Quaternion.Euler(-90, 0, 0));
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
-
-        //playerPrevPos.x = _player.transform.position.x;
-        //playerPrevPos.z = _player.transform.position.z;
     }
 
     private bool ShouldSpawnCampground()
@@ -109,14 +79,4 @@ public class PlaneGenerator : MonoBehaviour
     {
         return Random.Range(0f, 1f) < 0.05f; // 5% chance to spawn tree
     }
-
-
-    //private bool hasPlayerMoved(float playerX, float playerZ)
-    //{
-    //    if (Mathf.Abs(playerX) >= planeOffset || Mathf.Abs(playerZ) >= planeOffset)
-    //    {
-    //        return true;
-    //    }
-    //    return false;
-    //}
 }
