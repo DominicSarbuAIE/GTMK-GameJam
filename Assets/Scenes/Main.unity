@@ -320,7 +320,7 @@ RectTransform:
   m_Children:
   - {fileID: 1936637694}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -886,6 +886,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6780020340103289731, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
 --- !u!1001 &2047023876
@@ -1174,7 +1178,7 @@ Transform:
   - {fileID: 1394589205833062256}
   - {fileID: 7288041484954390244}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3205341009536035127
 Animator:
@@ -1245,13 +1249,17 @@ PrefabInstance:
       propertyPath: tree
       value: 
       objectReference: {fileID: 919132149155446097, guid: f9c0a5aab257a7340a93b9b4f6c6e955, type: 3}
+    - target: {fileID: 923891249095229405, guid: dbf4278ac4956ce4a91a14033411de63, type: 3}
+      propertyPath: radius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4249984825908695583, guid: dbf4278ac4956ce4a91a14033411de63, type: 3}
       propertyPath: m_Name
       value: Plane Generator
       objectReference: {fileID: 0}
     - target: {fileID: 6502546050733112100, guid: dbf4278ac4956ce4a91a14033411de63, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6502546050733112100, guid: dbf4278ac4956ce4a91a14033411de63, type: 3}
       propertyPath: m_LocalPosition.x
