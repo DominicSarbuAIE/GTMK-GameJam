@@ -61,7 +61,6 @@ public class PlaneGenerator : MonoBehaviour
                         if (ShouldSpawnTree())
                         {
                             Instantiate(tree, pos, Quaternion.Euler(-90,0,0));
-                           
                         }
                     }
                 }
