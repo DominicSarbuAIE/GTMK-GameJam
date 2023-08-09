@@ -107,7 +107,7 @@ public class PlaneGenerator : MonoBehaviour
 
     private bool ShouldSpawnTree()
     {
-        return Random.Range(0f, 1f) < 0.05f;
+        return Random.Range(0f, 1f) < 0.05f; // 5% chance to spawn tree
     }
 
 
