@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,12 @@ public class KnifeGuy : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        Speed = 4;
+        MinRange = 1;
+        MaxRange = 14;
+        MaxHealth = 4;
+        AttackDamage = 1;
+
         base.Start();
     }
 
@@ -16,31 +23,17 @@ public class KnifeGuy : Enemy
     {
         base.Update();
 
-        _distance = Vector3.Distance(_playerTransform.position, transform.position);
-
-        if (_distance < _minRange)
+        if (_distance < MinRange)
         {
             StopEnemy();
         }
-        else if (_distance > _maxRange)
+        if (_distance > MaxRange)
         {
             StopEnemy();
         }
-        else
-        {
-            // Move Towards "targetpos" (Player)
-            GoToPlayer();
-        }
+        else GoToPlayer();
+
     }
 
-    private void StopEnemy()
-    {
-        _speed = 0;
-    }
 
-    private void GoToPlayer()
-    {
-        _speed = 2;
-        transform.position = Vector3.MoveTowards(transform.position, _playerTransform.position, _speed * Time.deltaTime);
-    }
 }

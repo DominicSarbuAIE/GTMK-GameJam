@@ -9,6 +9,12 @@ public class SpearGuy : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        Speed = 3;
+        MinRange = 5;
+        MaxRange = 14;
+        MaxHealth = 4;
+        AttackDamage = 2;
+
         base.Start();
     }
 
@@ -16,32 +22,5 @@ public class SpearGuy : Enemy
     void Update()
     {
         base.Update();
-
-        _distance = Vector3.Distance(_playerTransform.position, transform.position);
-
-        if (_distance < _minRange)
-        {
-            StopEnemy();
-        }
-        else if (_distance > _maxRange)
-        {
-            StopEnemy();
-        }
-        else
-        {
-            // Move Towards "targetpos" (Player)
-            GoToPlayer();
-        }
-    }
-
-    private void StopEnemy()
-    {
-        _speed = 0;
-    }
-
-    private void GoToPlayer()
-    {
-        _speed = 2;
-        transform.position = Vector3.MoveTowards(transform.position, _playerTransform.position, _speed * Time.deltaTime);
     }
 }

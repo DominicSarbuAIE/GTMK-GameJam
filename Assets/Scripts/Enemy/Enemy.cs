@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,18 +5,39 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     // Stats
-    public float _health;
-    [SerializeField] public float _speed;
-    [SerializeField] protected float _maxRange;
-    [SerializeField] protected float _minRange;
-    [SerializeField] protected float _maxHealth;
-    [SerializeField] private LayerMask _playerLayMask;
-    [SerializeField] private float _attackRange;
-    [SerializeField] private float _attackDelay;
-    public int _attackDamage;
+    private float _health;
+    private float _maxHealth;    
+    public float MaxHealth
+    {
+        get { return _maxHealth; }
+        set { _maxHealth = value; }
+    }
+    private float _speed;
+    public float Speed
+    {
+        get { return _speed; }
+        set { _speed = value; }
+    }
+    private float _maxRange;
+    public float MaxRange
+    {
+        get { return _maxRange; }
+        set { _maxRange = value; }
+    }
+    private float _minRange;
+    public float MinRange
+    {
+        get { return _minRange; }
+        set { _minRange = value; }
+    }
+    private int _attackDamage;
+    public int AttackDamage
+    {
+        get { return _attackDamage; }
+        set { _attackDamage = value; }
+    }
 
-    // Other
-    Lion _player;
+    public Transform _player;
     //public bool _isAttacking = false;
     protected float _distance;
     //[SerializeField] private bool _canAttack = true;
@@ -29,7 +49,7 @@ public class Enemy : MonoBehaviour
     protected void Start()
     {
         // identify player object using Player tag
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Lion>();
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
         _playerTransform = GameObject.FindWithTag("Player").transform;
         _health = _maxHealth;
         _rigidbody = this.GetComponent<Rigidbody>();
@@ -48,6 +68,24 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(OnDeath());
         }
+
+        _distance = Vector3.Distance(_playerTransform.position, transform.position);
+    }
+
+    private void FixedUpdate()
+    {
+        
+    }
+
+    public void GoToPlayer()
+    {
+        _speed = Speed;
+        transform.position = Vector3.MoveTowards(transform.position, _playerTransform.position, _speed * Time.deltaTime);
+    }
+
+    public void StopEnemy()
+    {
+        _speed = 0;
     }
 
     public void TakeDamage(float damage)
@@ -77,29 +115,29 @@ public class Enemy : MonoBehaviour
     //    }
     //}
 
-   //private void MeleeCanAttack()
-   //{
-   //    if (_distance < 2)
-   //    {
-   //        if (_canAttack)
-   //        {
-   //            Attack();
-   //        }
-   //    }
-   //}
-   //private void Attack()
-   //{
-   //    _isAttacking = true;
-   //    _speed = 0;
-   //    StartCoroutine(AttackCooldown());
-   //    _canAttack = false;
-   //}
-   //
-   //IEnumerator AttackCooldown()
-   //{
-   //    yield return new WaitForSeconds(_attackDelay);
-   //    _isAttacking = false;
-   //    _speed = 2;
-   //    _canAttack = true;
-   //}
+    //private void MeleeCanAttack()
+    //{
+    //    if (_distance < 2)
+    //    {
+    //        if (_canAttack)
+    //        {
+    //            Attack();
+    //        }
+    //    }
+    //}
+    //private void Attack()
+    //{
+    //    _isAttacking = true;
+    //    _speed = 0;
+    //    StartCoroutine(AttackCooldown());
+    //    _canAttack = false;
+    //}
+    //
+    //IEnumerator AttackCooldown()
+    //{
+    //    yield return new WaitForSeconds(_attackDelay);
+    //    _isAttacking = false;
+    //    _speed = 2;
+    //    _canAttack = true;
+    //}
 }
