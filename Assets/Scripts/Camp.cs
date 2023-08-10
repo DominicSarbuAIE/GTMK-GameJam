@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Camp : MonoBehaviour
 {
@@ -30,7 +29,7 @@ public class Camp : MonoBehaviour
             _zLocation = transform.position.z + Random.Range(-6,6);
             _enemyLocation = new Vector3(_xLocation, 2, _zLocation);
 
-            Instantiate(_enemy, _enemyLocation, Quaternion.identity);
+            Instantiate(_enemy, _enemyLocation, Quaternion.identity, transform);
         }
     }
 

@@ -31,7 +31,7 @@ public class Lion : Player
         Debug.Log("Hit");
         _rb.AddForce(transform.forward * _knockback);
         _health -= _damage;
-        _playerHealthBar.ChangeHealthBar(_health);
+        _playerHealthBar.ChangeHealthBar(_damage);
     }
 
 

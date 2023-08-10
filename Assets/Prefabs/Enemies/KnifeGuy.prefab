@@ -125,7 +125,6 @@ GameObject:
   - component: {fileID: 968796930498461732}
   - component: {fileID: 1306112269834771179}
   - component: {fileID: 8928600615867233549}
-  - component: {fileID: 4709587360672504450}
   m_Layer: 7
   m_Name: KnifeGuy
   m_TagString: Enemy
@@ -241,33 +240,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0
-  _speed: 4
-  _maxRange: 14
+  _speed: 0
+  _maxRange: 0
   _minRange: 0
-  _maxHealth: 4
+  _maxHealth: 0
   _playerLayMask:
     serializedVersion: 2
     m_Bits: 64
-  _attackRange: 0
-  _attackDelay: 0
-  _attackDamage: 1
+  _attackDamage: 0
+  _player: {fileID: 0}
   _playerTransform: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
   _force: -500
---- !u!114 &4709587360672504450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7313397134835758698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9089a2cedfe8784f9b8610a8c21a0d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _campsPos: {fileID: 0}
-  _enemyPos: {fileID: 0}
-  _enemyInCamp: 0
-  _enemy: {fileID: 8928600615867233549}
-  _rotationSpeed: 0
-  _player: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}

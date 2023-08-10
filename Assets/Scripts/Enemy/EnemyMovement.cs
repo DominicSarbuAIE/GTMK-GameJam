@@ -27,6 +27,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // rotate enemy to player
         _distance = Vector3.Distance(_campsPos.position, transform.position);
         Vector3 _direction = _player.position - transform.position;
         float _angle = Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg;
@@ -40,13 +41,13 @@ public class EnemyMovement : MonoBehaviour
 
     public void StopEnemy()
     {
-        _enemy._speed = 0;
+        //_enemy._speed = 0;
     }
 
     public void GoToPlayer()
     {
-        _enemy._speed = 2;
-        transform.position = Vector3.MoveTowards(transform.position, _enemy._playerTransform.position, _enemy._speed * Time.deltaTime);
+        //_enemy._speed = 2;
+        //transform.position = Vector3.MoveTowards(transform.position, _enemy._playerTransform.position, _enemy._speed * Time.deltaTime);
     }
 
     public void MoveToCamp()

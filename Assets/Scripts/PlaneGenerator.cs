@@ -10,7 +10,7 @@ public class PlaneGenerator : MonoBehaviour
     [SerializeField] private int radius;
     [SerializeField] private int planeOffset;
     [SerializeField] private GameObject campgroundPrefab; // assign the campground prefab in the inspector
-    [SerializeField] private GameObject tree;
+    [SerializeField] private GameObject tree; // assign tree prefab in the inspector
 
     private Vector3 playerPrevPos = Vector3.zero;
     private Vector3 playerDeltaMove = Vector3.zero;
@@ -61,43 +61,12 @@ public class PlaneGenerator : MonoBehaviour
                         if (ShouldSpawnTree())
                         {
                             Instantiate(tree, pos, Quaternion.Euler(-90,0,0));
-                           
                         }
                     }
                 }
             }
             started = false;
         }
-
-        if (hasPlayerMoved(_player.transform.position.x, _player.transform.position.z))
-        {
-            for (int x = -radius; x <= radius; x++)
-            {
-                for (int z = -radius; z <= radius; z++)
-                {
-                    Vector3 pos = new Vector3((x * planeOffset + XPlayerLocation), 0, (z * planeOffset + ZPlayerLocation));
-
-                    if (!tilePlane.Contains(pos))
-                    {
-                        GameObject tile = Instantiate(plane, pos, Quaternion.identity, gameObject.transform);
-                        tilePlane.Add(pos, tile);
-
-                        // check if a campground should be spawned at this position
-                        if (ShouldSpawnCampground())
-                        {
-                            Instantiate(campgroundPrefab, pos, Quaternion.identity);
-                        }
-                        if (ShouldSpawnTree())
-                        {
-                            Instantiate(tree, pos, Quaternion.Euler(-90, 0, 0));
-                        }
-                    }
-                }
-            }
-        }
-
-        playerPrevPos.x = _player.transform.position.x;
-        playerPrevPos.z = _player.transform.position.z;
     }
 
     private bool ShouldSpawnCampground()
@@ -108,16 +77,6 @@ public class PlaneGenerator : MonoBehaviour
 
     private bool ShouldSpawnTree()
     {
-        return Random.Range(0f, 1f) < 0.05f;
-    }
-
-
-    private bool hasPlayerMoved(float playerX, float playerZ)
-    {
-        if (Mathf.Abs(playerX) >= planeOffset || Mathf.Abs(playerZ) >= planeOffset)
-        {
-            return true;
-        }
-        return false;
+        return Random.Range(0f, 1f) < 0.05f; // 5% chance to spawn tree
     }
 }

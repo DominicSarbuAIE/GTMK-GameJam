@@ -7,11 +7,15 @@ using UnityEngine;
 
 public class SniperGuy : Enemy
 {
-
-    public EnemyMovement _movement;
     // Start is called before the first frame update
     void Start()
     {
+        Speed = 2;
+        MinRange = 10;
+        MaxRange = 20;
+        MaxHealth = 3;
+        AttackDamage = 1;
+
         base.Start();
     }
 
@@ -19,23 +23,5 @@ public class SniperGuy : Enemy
     void Update()
     {
         base.Update();
-
-        _distance = Vector3.Distance(_playerTransform.position, transform.position);
-
-        if (_distance < _minRange)
-        {
-            _movement.StopEnemy();
-        }
-        else if(_distance > _maxRange)
-        {
-            _movement._enemyInCamp = false;
-            //_movement.MoveToCamp();
-        }
-        else
-        {
-            // Move Towards "targetpos" (Player)
-            _movement.GoToPlayer();
-        }
     }
-
 }
