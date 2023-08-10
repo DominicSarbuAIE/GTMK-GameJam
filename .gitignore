@@ -70,3 +70,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Scripts/Enemy/EnemyMovement_BACKUP_1938.cs
+Assets/Scripts/Enemy/EnemyMovement_BASE_1938.cs
+Assets/Scripts/Enemy/EnemyMovement_LOCAL_1938.cs
+Assets/Scripts/Enemy/EnemyMovement_REMOTE_1938.cs
