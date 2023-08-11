@@ -9,6 +9,7 @@ public class SpearGuy : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        // SpearGuy Stats
         ChaseSpeed = 3;
         ReturnSpeed = 2;
         IdleSpeed = 1;

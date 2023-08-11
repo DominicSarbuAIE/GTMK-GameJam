@@ -8,6 +8,7 @@ public class KnifeGuy : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        // KnifeGuy Stats
         ChaseSpeed = 4;
         ReturnSpeed = 2;
         IdleSpeed = 1;

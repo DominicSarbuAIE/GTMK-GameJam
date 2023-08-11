@@ -5,9 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     // Stats
+    // Updating Stats
     protected float _health; // Current health
-    public float MaxHealth { get; protected set;  }// Max health
     protected float _currentSpeed; // current speed type e.g. _chaseSpeed | _returnSpeed | _idleSpeed
+
+    // Stats pulled from enemy type e.g. Knifeguy | SpearGuy | SniperGuy
+    public float MaxHealth { get; protected set;  }// Max health
     public float MaxRange { get; protected set; } // Max Detection Range
     public float MinRange { get; protected set; } // ~~~~
     public int AttackDamage { get; protected set; } // Attack Damage
@@ -17,14 +20,15 @@ public class Enemy : MonoBehaviour
     public float ReturnSpeed { get; protected set; }
     public float IdleSpeed { get; protected set; }
 
-
     public Transform _player;
-    //public bool _isAttacking = false;
     protected float _distance;
-    //[SerializeField] private bool _canAttack = true;
     public Transform _playerTransform;
     private Rigidbody _rigidbody;
     [SerializeField] private float _force;
+
+    // Combat?
+    //public bool _isAttacking = false;
+    //[SerializeField] private bool _canAttack = true;
 
     // Start is called before the first frame update
     public void Start()
@@ -60,14 +64,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    //private void FixedUpdate()
-    //{
-    //    if (_playerInRange && _distance > MinRange && _distance < MaxRange)
-    //    {
-    //        GoToPlayer();
-    //    }
-    //}
-
     public void GoToPlayer()
     {
         _currentSpeed = ChaseSpeed;
@@ -83,7 +79,6 @@ public class Enemy : MonoBehaviour
     {
         _rigidbody.AddForce(transform.forward * _force);
         _health -= damage;
-        Debug.Log(_health);
     }
 
     private IEnumerator OnDeath()
@@ -94,17 +89,6 @@ public class Enemy : MonoBehaviour
 
         Destroy(gameObject);
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.tag == "Player")
-    //    {
-    //        Debug.Log("Hit");
-    //
-    //        _player.DoDamage(_attackDamage);
-    //
-    //    }
-    //}
 
     //private void MeleeCanAttack()
     //{

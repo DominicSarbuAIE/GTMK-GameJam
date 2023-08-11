@@ -6,7 +6,7 @@ using UnityEngine;
 public class Camp : MonoBehaviour
 {
 
-    public int _radius;
+    public int _radius; // Unused
     private int _numberOfEnemys;
     private float _xLocation;
     private float _zLocation;
@@ -19,7 +19,7 @@ public class Camp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _numberOfEnemys = Random.Range(5,10);
+        _numberOfEnemys = Random.Range(3,7);
 
         for (int i = 0; i < _numberOfEnemys; i++)
         {

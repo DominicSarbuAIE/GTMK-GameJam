@@ -10,6 +10,7 @@ public class SniperGuy : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        // SniperGuy Stats
         ChaseSpeed = 2;
         ReturnSpeed = 1;
         IdleSpeed = 1;
