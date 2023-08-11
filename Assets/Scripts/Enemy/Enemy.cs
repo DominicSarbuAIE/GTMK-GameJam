@@ -68,8 +68,6 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(OnDeath());
         }
-
-        _distance = Vector3.Distance(_playerTransform.position, transform.position);
     }
 
     private void FixedUpdate()
