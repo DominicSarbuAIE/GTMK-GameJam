@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +8,9 @@ public class KnifeGuy : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        Speed = 4;
+        ChaseSpeed = 4;
+        ReturnSpeed = 2;
+        IdleSpeed = 1;
         MinRange = 1;
         MaxRange = 14;
         MaxHealth = 4;
@@ -22,18 +23,5 @@ public class KnifeGuy : Enemy
     void Update()
     {
         base.Update();
-
-        if (_distance < MinRange)
-        {
-            StopEnemy();
-        }
-        if (_distance > MaxRange)
-        {
-            StopEnemy();
-        }
-        else GoToPlayer();
-
     }
-
-
 }

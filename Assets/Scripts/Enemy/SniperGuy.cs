@@ -10,7 +10,9 @@ public class SniperGuy : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        Speed = 2;
+        ChaseSpeed = 2;
+        ReturnSpeed = 1;
+        IdleSpeed = 1;
         MinRange = 10;
         MaxRange = 20;
         MaxHealth = 3;
