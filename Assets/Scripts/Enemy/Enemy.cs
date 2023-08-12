@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
@@ -16,9 +17,9 @@ public class Enemy : MonoBehaviour
     public int AttackDamage { get; protected set; } // Attack Damage
 
     // Speed types
-    public float ChaseSpeed { get; protected set; }
-    public float ReturnSpeed { get; protected set; }
-    public float IdleSpeed { get; protected set; }
+    public float ChaseSpeed { get; protected set; } // Speed when chasing player
+    public float ReturnSpeed { get; protected set; } // Speed when returning to camp
+    public float IdleSpeed { get; protected set; } // Speed when idle/wandering in camp
 
     public Transform _player;
     protected float _distance;
@@ -29,6 +30,10 @@ public class Enemy : MonoBehaviour
     // Combat?
     //public bool _isAttacking = false;
     //[SerializeField] private bool _canAttack = true;
+
+    GameObject jitter;
+    Vector3 wanderTarget = Vector3.zero;
+    NavMeshAgent agent;
 
     // Start is called before the first frame update
     public void Start()
@@ -44,7 +49,6 @@ public class Enemy : MonoBehaviour
     public void Update()
     {
         // Get player position
-        //Vector3 targetpos = new Vector3(_player.position.x, transform.position.y, _player.position.z);
         _distance = Vector3.Distance(_playerTransform.position, transform.position);
 
         //MeleeCanAttack();
@@ -56,7 +60,8 @@ public class Enemy : MonoBehaviour
 
         if (_distance < MinRange || _distance > MaxRange)
         {
-            StopEnemy();
+            //StopEnemy();
+            Wander();
         }
         else
         {
@@ -64,6 +69,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // Movement Functions
     public void GoToPlayer()
     {
         _currentSpeed = ChaseSpeed;
@@ -73,6 +79,39 @@ public class Enemy : MonoBehaviour
     public void StopEnemy()
     {
         _currentSpeed = 0;
+    }
+
+    void Seek(Vector3 location)
+    {
+
+        agent.SetDestination(location);
+    }
+
+    public void Wander()
+    {
+
+        float wanderRadius = 10.0f;
+        float wanderDistance = 20.0f;
+        float wanderJitter = 1.0f;
+
+        wanderTarget += new Vector3(
+            Random.Range(-1.0f, 1.0f) * wanderJitter,
+            0.0f,
+            Random.Range(-1.0f, 1.0f));
+        wanderTarget.Normalize();
+        wanderTarget *= wanderRadius;
+
+        Vector3 targetLocal = wanderTarget + new Vector3(0.0f, 0.0f, wanderDistance);
+        Vector3 targetWorld = gameObject.transform.InverseTransformVector(targetLocal);
+
+        Debug.DrawLine(transform.position, targetWorld, Color.red);
+        jitter.transform.position = targetWorld;
+        Seek(targetWorld);
+    }
+
+    public void Return()
+    {
+
     }
 
     public void TakeDamage(float damage)
