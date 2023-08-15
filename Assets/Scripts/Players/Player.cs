@@ -8,14 +8,13 @@ public class Player : MonoBehaviour
     // Stats
     protected int _health;
     public int _maxHealth { get; protected set; }
-    [SerializeField] public int _speed { get; protected set; }
+    public int _speed { get; protected set; }
     public int _damage { get; protected set; }
     public int _knockBack { get; protected set; }
 
     // Other
     protected Rigidbody _rb;
     private Vector2 _movement;
-    //Enemy _enemy;
     public PlayerHealthBar _playerHealthBar;
 
     protected void Start()
@@ -47,18 +46,20 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Euler(0.0f, rot, 0.0f); // Body rotation.
         }
 
-        _rb.position += new Vector3(_movement.x, 0, _movement.y) * _speed * Time.fixedDeltaTime;
+        //_rb.position += new Vector3(_movement.x, 0, _movement.y) * _speed * Time.fixedDeltaTime;
+        _rb.position += new Vector3(_movement.x, 0, _movement.y) * _speed * Time.deltaTime;
     }
 
     protected void FixedUpdate()
     {
         //move player
-        _rb.position += new Vector3(_movement.x, 0, _movement.y) * _speed * Time.fixedDeltaTime;
+        //_rb.position = new Vector3(_movement.x, 0, _movement.y) * _speed * Time.fixedDeltaTime;
 
     }
 
-    //protected void OnMove(InputValue value)
-    //{
-    //    _movement = value.Get<Vector2>();
-    //}
+    void OnMove(InputValue value)
+    {
+        Debug.Log("move");
+        _movement = value.Get<Vector2>();
+    }
 }

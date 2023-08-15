@@ -224,7 +224,7 @@ MonoBehaviour:
   _wall:
     serializedVersion: 2
     m_Bits: 8
-  _target: {fileID: 0}
+  _target: {fileID: 1749478960}
   _maxDistance: 1
 --- !u!1 &157531567
 GameObject:
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 1246142850}
   m_Layer: 6
   m_Name: SpawnPoint
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -635,9 +635,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1749478960}
   - component: {fileID: 1749478959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -949,7 +949,7 @@ Transform:
   - {fileID: 1394589205833062256}
   - {fileID: 7288041484954390244}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3205341009536035127
 Animator:
@@ -1007,7 +1007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6502546050733112100, guid: dbf4278ac4956ce4a91a14033411de63, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6502546050733112100, guid: dbf4278ac4956ce4a91a14033411de63, type: 3}
       propertyPath: m_LocalPosition.x
