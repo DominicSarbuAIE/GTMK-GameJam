@@ -39,13 +39,13 @@ public class MoveBullet : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        Lion eh = other.gameObject.GetComponent<Lion>();
-
-        if (eh)
-        {
-            Destroy(gameObject);
-            eh.DoDamage(_damage);
-        }
+        //Lion eh = other.gameObject.GetComponent<Lion>();
+        //
+        //if (eh)
+        //{
+        //    Destroy(gameObject);
+        //    eh.DoDamage(_damage);
+        //}
 
     }
 }
