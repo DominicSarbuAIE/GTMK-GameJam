@@ -46,20 +46,18 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Euler(0.0f, rot, 0.0f); // Body rotation.
         }
 
-        //_rb.position += new Vector3(_movement.x, 0, _movement.y) * _speed * Time.fixedDeltaTime;
+        // move player
         _rb.position += new Vector3(_movement.x, 0, _movement.y) * _speed * Time.deltaTime;
     }
 
     protected void FixedUpdate()
     {
-        //move player
-        //_rb.position = new Vector3(_movement.x, 0, _movement.y) * _speed * Time.fixedDeltaTime;
 
     }
 
     void OnMove(InputValue value)
     {
-        Debug.Log("move");
+        // get player input using unity player input system
         _movement = value.Get<Vector2>();
     }
 }
