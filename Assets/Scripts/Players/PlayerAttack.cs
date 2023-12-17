@@ -32,9 +32,7 @@ public class PlayerAttack : MonoBehaviour
 
         foreach(Collider enemys in _hitEnemys)
         {
-            Debug.Log("we hit enemy");
             enemys.GetComponent<Enemy>().TakeDamage(_damage);
-
         }
     }
 

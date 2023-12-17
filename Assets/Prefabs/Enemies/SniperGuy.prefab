@@ -129,7 +129,6 @@ GameObject:
   - component: {fileID: 694140009738757814}
   - component: {fileID: 3042443180120627896}
   - component: {fileID: 3973224246062263845}
-  - component: {fileID: 3963473129848191501}
   - component: {fileID: 6925018643868272836}
   m_Layer: 7
   m_Name: SniperGuy
@@ -247,38 +246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a0e4f90696c78b468acbcbd12895e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 0
-  _speed: 2
-  _maxRange: 20
-  _minRange: 10
-  _maxHealth: 3
-  _playerLayMask:
-    serializedVersion: 2
-    m_Bits: 128
-  _attackRange: 0
-  _attackDelay: 0
-  _attackDamage: 1
+  _player: {fileID: 0}
   _playerTransform: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
   _force: 0
-  _movement: {fileID: 3963473129848191501}
---- !u!114 &3963473129848191501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2552489892831350295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9089a2cedfe8784f9b8610a8c21a0d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _campsPos: {fileID: 0}
-  _enemyPos: {fileID: 0}
-  _enemyInCamp: 0
-  _enemy: {fileID: 3973224246062263845}
-  _rotationSpeed: 2
-  _player: {fileID: 5472247592099261297, guid: b2d558a19b400e842a2f5ba0625ff2e6, type: 3}
 --- !u!114 &6925018643868272836
 MonoBehaviour:
   m_ObjectHideFlags: 0

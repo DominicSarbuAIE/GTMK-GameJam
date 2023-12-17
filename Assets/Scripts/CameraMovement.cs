@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    [SerializeField] private float _followSpeed;
+    private float _followSpeed = 2;
     private Vector3 _offset;
     [SerializeField] private LayerMask _wall;
     [SerializeField] private Transform _target;
-    [SerializeField] private float _maxDistance;
+    private float _maxDistance = 1;
 
     // Start is called before the first frame update
     void Start()
